@@ -36,6 +36,6 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
   
   ```bash
   npm start
-
+  ```
 
 ### The application will be accessible at http://localhost:3000.
