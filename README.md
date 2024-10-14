@@ -35,7 +35,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 ## Running the Project
   
   ```bash
-  npm start ```
+  npm start
 
-##
-The application will be accessible at http://localhost:3000.
+
+### The application will be accessible at http://localhost:3000.
