@@ -1,0 +1,162 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease; /* Ajoute une animation d'apparition */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  background: white;
+  padding: 25px;
+  border-radius: 10px; /* Ajout de courbures plus douces */
+  width: 350px; /* Ajustement de la largeur pour plus de confort visuel */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre plus douce */
+  position: relative; /* Pour placer le bouton de fermeture */
+  animation: slideIn 0.3s ease-out; /* Animation d'apparition */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.eventInput,
+.eventSelect {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.eventInput:focus,
+.eventSelect:focus {
+  border-color: #4CAF50; /* Changement de couleur au focus */
+  outline: none;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.updateButton,
+.deleteButton,
+.closeButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease; /* Animation de transition pour l'effet de survol */
+}
+
+.updateButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.updateButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #e53935;
+}
+
+.closeButton {
+  background-color: #ccc;
+  color: black;
+}
+
+.closeButton:hover {
+  background-color: #b3b3b3;
+}
+
+/* Style pour le bouton de fermeture avec une icône */
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.closeIcon:hover {
+  color: #000;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between; /* Espacement uniforme entre les boutons */
+  gap: 10px; /* Ajoute un espacement entre les boutons */
+}
+
+.updateButton,
+.deleteButton,
+.closeButton {
+  flex: 1; /* Chaque bouton occupe la même quantité d'espace */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center; /* Assure que le texte est centré */
+}
+
+.updateButton,
+.deleteButton,
+.closeButton {
+  min-width: 100px; /* Assure une largeur minimale pour chaque bouton */
+}
+
+.updateButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.updateButton:hover {
+  background-color: #45a049;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #e53935;
+}
+
+.closeButton {
+  background-color: #ccc;
+  color: black;
+}
+
+.closeButton:hover {
+  background-color: #b3b3b3;
+}

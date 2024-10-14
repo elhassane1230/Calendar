@@ -1,0 +1,117 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px; /* Pour éviter que la modal touche les bords de l'écran sur des petits écrans */
+}
+
+.modalContent {
+  background: white;
+  padding: 25px;
+  border-radius: 10px; /* Bord plus arrondi */
+  width: 450px; /* Augmentation de la largeur pour un peu plus d'espace */
+  max-width: 90%; /* Assure que la modal s'adapte sur les petits écrans */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
+  position: relative; /* Nécessaire pour positionner les éléments internes */
+  animation: fadeIn 0.3s ease-in-out; /* Animation d'apparition fluide */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.eventList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eventItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Les éléments sont distribués sur toute la ligne */
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 5px; /* Légèrement arrondi */
+}
+
+.eventItem:hover {
+  background-color: #f5f5f5; /* Couleur plus subtile au survol */
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.6em;
+  transition: color 0.3s ease;
+}
+
+/* Couleurs pour chaque type d'événement */
+.toDo {
+  color: #FFA500; /* Orange pour les tâches à faire */
+}
+
+.done {
+  color: #4CAF50; /* Vert pour les tâches terminées */
+}
+
+.canceled {
+  color: #F44336; /* Rouge pour les tâches annulées */
+}
+
+
+.eventItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.eventItem:hover {
+  background-color: #f0f0f0; /* Couleur de survol */
+}
+
+.eventName {
+  flex-grow: 1; /* Remplit l'espace disponible */
+  font-weight: bold;
+}
+
+.eventType {
+  font-size: 0.9em; /* Plus petit que le nom de l'événement */
+  color: #777; /* Couleur plus claire pour le type d'événement */
+}
+
+.closeButton {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #ccc;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: #d32f2f; /* Couleur de survol plus intense */
+}
+
+
+
+
