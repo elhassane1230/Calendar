@@ -5,6 +5,8 @@ import { FaCheckCircle, FaExclamationCircle, FaTimesCircle } from 'react-icons/f
 const EventModal = ({ isOpen, events, onClose, onEdit }) => {
   if (!isOpen) return null;
 
+  const list = events || [];
+
   const getEventIcon = (type) => {
     switch (type) {
       case 'done':
@@ -22,11 +24,11 @@ const EventModal = ({ isOpen, events, onClose, onEdit }) => {
       <div className={styles.modalContent}>
         <h2>Événements du jour</h2>
         <ul className={styles.eventList}>
-          {events.map((event, index) => (
-            <li 
-              key={index} 
-              className={styles.eventItem} 
-              onClick={() => onEdit(event)} 
+          {list.map((event) => (
+            <li
+              key={event.id}
+              className={styles.eventItem}
+              onClick={() => onEdit(event)}
             >
               {getEventIcon(event.type)}
               <span className={styles.eventName}>{event.name}</span>

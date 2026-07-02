@@ -1,41 +1,91 @@
-# Calendar Project
+# Dynamic Calendar
 
-## Description
+A monthly **calendar web app** to create, edit, delete and track events, built with
+**Next.js** and **React**. Each event has a status — *To Do*, *Done* or *Canceled* —
+shown by colour and icon, and events are **persisted in the browser** so they
+survive a refresh.
 
-This project is a calendar application that allows you to create, edit, and delete events. You can easily navigate through months, view events for a specific day, and manage their status (To Do, Done, Canceled). The application uses React for the user interface and the date-fns library for date manipulation.
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![React](https://img.shields.io/badge/React-18-61dafb)
+![date-fns](https://img.shields.io/badge/date--fns-4-blue)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
+---
 
 ## Features
 
-- Create events for specific dates.
-- Edit existing events.
-- Delete events.
-- View all events for a given day.
-- Filter events by status.
+- **Month navigation** — move between months with the arrow buttons.
+- **Create events** — click any day to add an event.
+- **Per-day event preview** — each cell shows the first events; “Voir plus…” opens
+  the full list for that day.
+- **Edit & delete** — open an event to rename it, change its status, or remove it.
+- **Status cycle** — events are *To Do* (orange), *Done* (green) or *Canceled* (red).
+- **Persistence** — events are saved to `localStorage` and restored on reload.
+- **Today highlight** and **keyboard `Esc`** to close any modal.
 
-## Prerequisites
+## Tech stack
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+| Layer | Choice |
+|-------|--------|
+| Framework | Next.js 14 (Pages Router) |
+| UI | React 18, CSS Modules |
+| Dates | date-fns |
+| Icons | react-icons |
 
-## Installation
+## Getting started
 
-1. Clone the repository:
+Requires [Node.js](https://nodejs.org/) 18+.
 
-   ```bash
-   git clone https://github.com/elhassane1230/Calendar.git
-   
-2. Navigate to the project directory:
+```bash
+# install dependencies
+npm install
 
-   ```bash
-   cd Calendar
-4. Install the dependencies:
+# development server (hot reload) -> http://localhost:3000
+npm run dev
 
-   ```bash
-   npm install
+# production build + run
+npm run build
+npm start
+```
 
-## Running the Project
-  
-  ```bash
-  npm start
-  ```
+> Note: `npm start` runs `next start`, which serves the output of `npm run build`,
+> so build first. For day-to-day development use `npm run dev`.
 
-### The application will be accessible at http://localhost:3000.
+## Project structure
+
+```
+.
+├── components/
+│   ├── Calendar.js         # month grid, state, persistence, event handlers
+│   ├── Modal.js            # "add event" dialog
+│   ├── EventModal.js       # list of a day's events
+│   └── EditEventModal.js   # edit / delete an event
+├── pages/
+│   ├── index.js            # home page (renders the calendar)
+│   ├── _app.js, _document.js
+│   └── api/hello.js
+├── styles/                 # CSS modules
+└── public/
+```
+
+## How it works
+
+Events are kept in a single React state object keyed by day
+(`"yyyy-MM-dd" -> [{ id, name, type }]`). Every event carries a **unique id**, so
+edits, status changes and deletions target exactly one event — even when two
+events on the same day share a name. Changes are written to `localStorage` and
+reloaded on startup.
+
+## Screenshots
+
+Add screenshots under `public/` and reference them here, for example:
+
+```
+![Calendar view](public/screenshot-calendar.png)
+![Add event](public/screenshot-add.png)
+![Edit event](public/screenshot-edit.png)
+```
+
+## License
+
+Released under the MIT License.
