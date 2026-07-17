@@ -1,7 +1,7 @@
 # Dynamic Calendar
 
 A monthly **calendar web app** to create, edit, delete and track events, built with
-**Next.js** and **React**. Each event has a status — *To Do*, *Done* or *Canceled* —
+**Next.js** and **React**. Each event has a status, *To Do*, *Done* or *Canceled*,
 shown by colour and icon, and events are **persisted in the browser** so they
 survive a refresh.
 
@@ -14,13 +14,13 @@ survive a refresh.
 
 ## Features
 
-- **Month navigation** — move between months with the arrow buttons.
-- **Create events** — click any day to add an event.
-- **Per-day event preview** — each cell shows the first events; “Voir plus…” opens
+- **Month navigation**: move between months with the arrow buttons.
+- **Create events**: click any day to add an event.
+- **Per-day event preview**: each cell shows the first events; “Voir plus…” opens
   the full list for that day.
-- **Edit & delete** — open an event to rename it, change its status, or remove it.
-- **Status cycle** — events are *To Do* (orange), *Done* (green) or *Canceled* (red).
-- **Persistence** — events are saved to `localStorage` and restored on reload.
+- **Edit & delete**: open an event to rename it, change its status, or remove it.
+- **Status cycle**: events are *To Do* (orange), *Done* (green) or *Canceled* (red).
+- **Persistence**: events are saved to `localStorage` and restored on reload.
 - **Today highlight** and **keyboard `Esc`** to close any modal.
 
 ## Tech stack
@@ -72,7 +72,7 @@ npm start
 
 Events are kept in a single React state object keyed by day
 (`"yyyy-MM-dd" -> [{ id, name, type }]`). Every event carries a **unique id**, so
-edits, status changes and deletions target exactly one event — even when two
+edits, status changes and deletions target exactly one event, even when two
 events on the same day share a name. Changes are written to `localStorage` and
 reloaded on startup.
 
